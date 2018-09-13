@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  * determines if
- * Return (Success)
+ * Return: (Success)
  */
 
 int main(void)

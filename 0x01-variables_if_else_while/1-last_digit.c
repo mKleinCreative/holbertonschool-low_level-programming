@@ -4,7 +4,7 @@
 
 /**
  * main - Entry point
- * determines if 
+ * determines if
  * Return (Success)
  */
 

@@ -40,7 +40,9 @@ void format_product(int row, int col, int total)
 	int product;
 
 	product = row * col;
-	if (col == total)
+	if (col == 0)
+		printf("%d,", product);
+	else if (col == total)
 	{
 		num_of_spaces(product);
 		printf("%d\n", product);

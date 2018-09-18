@@ -1,8 +1,9 @@
 #include "holberton.h"
 
 /**
- * main - Entry point
- *
+ * times_table - Entry point
+ * prints out a multiplication table showing all the products for the range
+ * 0 - 9
  * Return: (Success)
  */
 
@@ -27,25 +28,21 @@ void times_table(void)
 				_putchar(' ');
 				_putchar(' ');
 				_putchar(current + '0');
-				if (innerCount == 9)
-				{
-					_putchar('\n');
-					innerCount++;
-					continue;
-				}
-				_putchar(',');
+				if (innerCount != 9)
+					_putchar(',');
 			} else
 			{
 				_putchar(' ');
 				_putchar((current / 10) + '0');
 				_putchar((current % 10) + '0');
-				if (innerCount == 9)
-				{
-					_putchar('\n');
-					innerCount++;
-					continue;
-				}
-				_putchar(',');
+				if (innerCount != 9)
+					_putchar(',');
+			}
+			if (innerCount == 9)
+			{
+				_putchar('\n');
+				innerCount++;
+				continue;
 			}
 			innerCount++;
 		}

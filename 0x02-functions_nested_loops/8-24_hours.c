@@ -1,13 +1,15 @@
 #include "holberton.h"
 /**
- * main - Entry point
- *
+ * jack_bauer - Entry point
+ * prints out the time in this format HH:MM
+ * for 24 hours.
  * Return: (Success)
  */
 
 void jack_bauer(void)
 {
 	int hr1, hr2, min1, min2;
+
 	hr1 = 0;
 	hr2 = 0;
 	min1 = 0;
@@ -29,7 +31,7 @@ void jack_bauer(void)
 				break;
 			hr2++;
 			min1 = 0;
-			min2 = -1;	
+			min2 = -1;
 			if (hr2 >= 9)
 			{
 				hr1++;

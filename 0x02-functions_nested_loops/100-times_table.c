@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "holberton.h"
 
-void format_product(int row, int col, int total);
-void num_of_spaces(int num);
+static void format_product(int row, int col, int total);
+static void num_of_spaces(int num);
 
 /**
  * print_times_table - Entry point

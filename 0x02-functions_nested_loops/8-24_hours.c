@@ -32,7 +32,7 @@ void jack_bauer(void)
 			hr2++;
 			min1 = 0;
 			min2 = -1;
-			if (hr2 >= 9)
+			if (hr2 == 10)
 			{
 				hr1++;
 				hr2 = 0;

@@ -1,14 +1,15 @@
 #include "holberton.h"
 
 /**
- * main - Entry point
- *
+ * print_alphabet - Entry point
+ * Prints out the alphabet compiled together.
  * Return: (Success)
  */
 
 void print_alphabet(void)
 {
 	int ch;
+
 	for (ch = 'a'; ch <= 'z'; ch++)
 		_putchar(ch);
 }

@@ -6,7 +6,23 @@
  * @n: prints an n sized times table starting with 0.
  *
  * Return: The sum given the two arguements. (Success)
+ *
+ * format_product - Entry point
+ * @row: current row of times table.
+ * @col: current column of times table.
+ * @total: what the times table is heading towards.
+ *  The sum given the two arguements. (Success)
+ *
+ * num_of_spaces - Entry point
+ * @num: prints the number of spaces required to keep everything inline.
+ * provides 1 space for single digit numbers,
+ * 2 for double and 3 for triple digit numbers.
+ *
+ * The sum given the two arguements. (Success)
  */
+
+void format_product(int row, int col, int total);
+void num_of_spaces(int num);
 
 void print_times_table(int n)
 {
@@ -24,15 +40,6 @@ void print_times_table(int n)
 	}
 }
 
-
-/**
- * format_product - Utility
- * @row: current row of times table.
- * @col: current column of times table.
- * @total: what the times table is heading towards.
- * Return: The sum given the two arguements. (Success)
- */
-
 void format_product(int row, int col, int total)
 {
 	int product;
@@ -48,16 +55,6 @@ void format_product(int row, int col, int total)
 		printf("%d,", product);
 	}
 }
-
-
-/**
- * num_of_spaces - Utility
- * @num: prints the number of spaces required to keep everything inline.
- * provides 1 space for single digit numbers,
- * 2 for double and 3 for triple digit numbers.
- *
- * Return: The sum given the two arguements. (Success)
- */
 
 void num_of_spaces(int num)
 {

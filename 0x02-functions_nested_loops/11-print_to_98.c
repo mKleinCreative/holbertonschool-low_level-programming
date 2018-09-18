@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * main - Entry point
- *
+ * print_to_98 - Entry point
+ * @n: the starting point of the algorithm, it will go from here to 98
  * Return: (Success)
  */
 

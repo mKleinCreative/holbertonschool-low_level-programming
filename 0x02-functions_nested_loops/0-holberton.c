@@ -1,7 +1,7 @@
-#include "./_putchar.c"
+#include "holberton.h"
 
 /**
- * main - Entry point
+ * main - Prints the word "Holberton" to the console. Entry point
  *
  * Return: (Success)
  */
@@ -13,6 +13,6 @@ int main(void)
 
 	for (ch = 0; name[ch] != '\0'; ch++)
 		_putchar(name[ch]);
-
+	_putchar('\n');
 	return (0);
 }

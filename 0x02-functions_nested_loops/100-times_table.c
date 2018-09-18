@@ -1,8 +1,76 @@
-#include <stdio.h>
 #include "holberton.h"
 
-static void format_product(int row, int col, int total);
-static void num_of_spaces(int num);
+/**
+ * num_of_spaces - prints spaces to keep things pretty
+ * @num: prints the number of spaces required to keep everything inline.
+ * Description: provides 1 space for single digit numbers,
+ * 2 for double and 3 for triple digit numbers.
+ *
+ * Return: The sum given the two arguements. (Success)
+ */
+
+static void num_of_spaces(int num)
+{
+	if (num >= 100)
+	{
+		_putchar(' ');
+	} else if (num <= 99 && num >= 10)
+	{
+		_putchar(' ');
+		_putchar(' ');
+	} else
+	{
+		_putchar(' ');
+		_putchar(' ');
+		_putchar(' ');
+	}
+}
+
+/**
+ * format_product - creates each column/row combination
+ * @row: current row of times table.
+ * @col: current column of times table.
+ * @total: what the times table is heading towards.
+ * Return: The sum given the two arguements.
+ */
+
+static void format_product(int row, int col, int total)
+{
+	int product, first, second, third;
+
+	product = row * col;
+
+	first = ((product / 100) + '0');
+	second = ((product / 10) + '0');
+	third = ((product % 10) + '0');
+	if (col == 0)
+		_putchar(product + '0');
+	else if (col == total)
+	{
+		num_of_spaces(product);
+		_putchar(product + '0');
+		_putchar('\n');
+	}
+	if (product > 100)
+	{
+		num_of_spaces(product);
+		_putchar(first);
+		_putchar(second);
+		_putchar(third);
+		_putchar(',');
+	} else if (product < 100 && product > 9)
+	{
+		num_of_spaces(product);
+		_putchar(second);
+		_putchar(third);
+		_putchar(',');
+	} else
+	{
+		num_of_spaces(product);
+		_putchar(third);
+		_putchar(',');
+	}
+}
 
 /**
  * print_times_table - Entry point
@@ -24,54 +92,5 @@ void print_times_table(int n)
 		{
 			format_product(rows, columns, n);
 		}
-	}
-}
-
-/**
- * format_product - creates each column/row combination
- * @row: current row of times table.
- * @col: current column of times table.
- * @total: what the times table is heading towards.
- * Return: The sum given the two arguements.
- */
-
-void format_product(int row, int col, int total)
-{
-	int product;
-
-	product = row * col;
-	if (col == 0)
-		printf("%d,", product);
-	else if (col == total)
-	{
-		num_of_spaces(product);
-		printf("%d\n", product);
-	} else
-	{
-		num_of_spaces(product);
-		printf("%d,", product);
-	}
-}
-
-/**
- * num_of_spaces - prints spaces to keep things pretty
- * @num: prints the number of spaces required to keep everything inline.
- * Description: provides 1 space for single digit numbers,
- * 2 for double and 3 for triple digit numbers.
- *
- * Return: The sum given the two arguements. (Success)
- */
-
-void num_of_spaces(int num)
-{
-	if (num >= 100)
-	{
-		printf(" ");
-	} else if (num <= 99 && num >= 10)
-	{
-		printf("  ");
-	} else
-	{
-		printf("   ");
 	}
 }

@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "holberton.h"
 
 /**
  * main - Entry point
@@ -7,8 +6,9 @@
  * Return: (Success)
  */
 
-int main(void)
+void print_alphabet(void)
 {
-	return (0);
+	int ch;
+	for (ch = 'a'; ch <= 'z'; ch++)
+		_putchar(ch);
 }
-

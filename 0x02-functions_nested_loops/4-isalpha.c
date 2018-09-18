@@ -1,14 +1,17 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 /**
- * main - Entry point
- *
+ * _isalpha - Entry point
+ * @c: is an integer we'll be receiving from the main
+ *    funciton to test if it's alphanumeric
  * Return: (Success)
  */
 
-int main(void)
+int _isalpha(int c)
 {
-	return (0);
+	if (c >= 97 && c <= 122)
+		return (1);
+	else if (c >= 65 && c <= 90)
+		return (1);
+	else
+		return (0);
 }
 

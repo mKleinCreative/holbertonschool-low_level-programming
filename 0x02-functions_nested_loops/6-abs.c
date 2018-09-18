@@ -1,14 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 /**
  * main - Entry point
  *
  * Return: (Success)
  */
 
-int main(void)
+int _abs(int n)
 {
-	return (0);
+	return n * ((n>0) - (n<0));
 }
-

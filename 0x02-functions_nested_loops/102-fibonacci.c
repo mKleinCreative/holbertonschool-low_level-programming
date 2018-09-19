@@ -18,6 +18,11 @@ int main(void)
 
 	for (count = 0; count <= 50; count++)
 	{
+		if (count == 50)
+		{
+			printf("%lu\n", previous);
+			continue;
+		}
 		printf("%lu, ", previous);
 		next = previous + current;
 		previous = current;

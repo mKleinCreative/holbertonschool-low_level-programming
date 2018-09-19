@@ -16,12 +16,12 @@ int main(void)
 	current = 2;
 	previous = 1;
 
-	for (count = 0; count <= 50; count++)
+	for (count = 2; count <= 50; count++)
 	{
 		if (count == 50)
 		{
 			printf("%lu\n", previous);
-			continue;
+			break;
 		}
 		printf("%lu, ", previous);
 		next = previous + current;

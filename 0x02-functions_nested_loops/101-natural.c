@@ -1,12 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
- /**
-  * natural - finding the sums of numbers
-  *
-  * Description: Find the sum of all numbers divisible by 3 or 5 below 1024
-  **/
-
+/**
+ * main - The sums of numbers divisible by 3 and 5 under 1024
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	int sum;

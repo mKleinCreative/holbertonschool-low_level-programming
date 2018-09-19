@@ -13,19 +13,15 @@ int main(void)
 	int count;
 
 	count = 0;
-
-	while(count <= 1024)
+	sum = 0;
+	while (count < 1024)
 	{
-		if (count % 3)
+		if (count % 3 == 0 || count % 5 == 0)
 		{
-			sum += count;
+			sum = count + sum;
 			count++;
-		} else if (count % 5)
-		{
-			sum += count;
+		} else
 			count++;
-		}
-		count++;
 	}
 	printf("%d\n", sum);
 	return (0);

@@ -39,36 +39,42 @@ static void format_product(int row, int col, int total)
 	int product, first, second, third;
 
 	product = row * col;
-
-	first = ((product / 100) + '0');
-	second = ((product / 10) + '0');
-	third = ((product % 10) + '0');
+	first = product / 100;
+	second = ((product / 10) % 10);
+	third = product % 10;
 	if (col == 0)
-		_putchar(product + '0');
-	else if (col == total)
 	{
-		num_of_spaces(product);
 		_putchar(product + '0');
-		_putchar('\n');
+		_putchar(',');
+		return;
 	}
-	if (product > 100)
+	if (product >= 100)
 	{
 		num_of_spaces(product);
-		_putchar(first);
-		_putchar(second);
-		_putchar(third);
-		_putchar(',');
-	} else if (product < 100 && product > 9)
+		_putchar(first + '0');
+		_putchar(second + '0');
+		_putchar(third + '0');
+		if (col == total)
+			_putchar('\n');
+		else
+			_putchar(',');
+	} else if (product <= 99 && product >= 10)
 	{
 		num_of_spaces(product);
-		_putchar(second);
-		_putchar(third);
-		_putchar(',');
+		_putchar(second + '0');
+		_putchar(third + '0');
+		if (col == total)
+			_putchar('\n');
+		else
+			_putchar(',');
 	} else
 	{
 		num_of_spaces(product);
-		_putchar(third);
-		_putchar(',');
+		_putchar(third + '0');
+		if (col == total)
+			_putchar('\n');
+		else
+			_putchar(',');
 	}
 }
 

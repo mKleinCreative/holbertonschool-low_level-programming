@@ -16,9 +16,9 @@ int main(void)
 	current = 2;
 	previous = 1;
 
-	for (count = 2; count <= 50; count++)
+	for (count = 2; count <= 51; count++)
 	{
-		if (count == 50)
+		if (count == 51)
 		{
 			printf("%lu\n", previous);
 			break;

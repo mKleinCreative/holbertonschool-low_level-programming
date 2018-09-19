@@ -17,9 +17,14 @@ int main(void)
 	while(count <= 1024)
 	{
 		if (count % 3)
+		{
 			sum += count;
-		else if (count % 5)
+			count++;
+		} else if (count % 5)
+		{
 			sum += count;
+			count++;
+		}
 		count++;
 	}
 	printf("%d\n", sum);

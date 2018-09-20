@@ -77,7 +77,7 @@ int main(void)
 	int current;
 	int sum;
 
-	for (n = 2; n <= 33; n++)
+	for (n = 1; n <= 33; n++)
 	{
 		current = fib(n);
 		if (current % 2)

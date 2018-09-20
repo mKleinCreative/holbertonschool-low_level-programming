@@ -1,4 +1,4 @@
-#include "holberton.h" 
+#include "holberton.h"
 
 /**
  * print_number - prints a number.
@@ -8,12 +8,17 @@
 
 void print_number(int n)
 {
+	unsigned int large;
+
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		large = -n;
+	} else
+		large = n;
+	if (large >= 10)
+	{
+		print_number(large / 10);
 	}
-	if (n / 10)
-		print_number(n / 10);
-	_putchar(n % 10 + '0');
+	_putchar(large % 10 + '0');
 }

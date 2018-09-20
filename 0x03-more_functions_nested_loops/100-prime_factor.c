@@ -24,7 +24,7 @@ int main(void)
 		}
 		if (number == 1)
 		{
-			printf("%li", maxFact);
+			printf("%li\n", maxFact);
 			break;
 		}
 	}

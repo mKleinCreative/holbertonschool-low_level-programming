@@ -2,8 +2,9 @@
 #include <stdlib.h>
 
 /**
- * fizz_buzz - Entry point
- *
+ * main - changes numbers into either fizz, buzz or fizzbuzz
+ * Description: Multiples of 3 are changed to Fizz,
+ * multiples of 5 are changed to buzz, multiples of both are FizzBuzz
  * Return: (Success)
  */
 
@@ -18,10 +19,10 @@ int main(void)
 			printf("%s ", "FizzBuzz");
 		} else if (i % 5 == 0)
 		{
-			printf("%s ", "Fizz");
+			printf("%s ", "Buzz");
 		} else if (i % 3 == 0)
 		{
-			printf("%s ", "Buzz");
+			printf("%s ", "Fizz");
 		} else
 			printf("%d ", i);
 	}

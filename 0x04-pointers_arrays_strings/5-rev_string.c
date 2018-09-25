@@ -8,15 +8,15 @@
 void rev_string(char *s)
 {
 	char *first, *last, c;
-	
+
 	first = s;
 	last = s;
 
-	while ( *last )
+	while (*last)
 		++last;
-	if ( first < last)
+	if (first < last)
 	{
-		for ( ; first < --last; ++first )
+		for (; first < --last; ++first)
 		{
 			c = *first;
 			*first = *last;

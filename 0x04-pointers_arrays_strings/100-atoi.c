@@ -8,7 +8,7 @@
 int _atoi(char *s)
 {
 	int i, neg;
-	int total;
+	unsigned int total;
 
 	total = 0;
 	neg = 1;
@@ -22,7 +22,7 @@ int _atoi(char *s)
 			total = total * 10 + s[i] - 48;
 	}
 	if (neg < 0)
-		return (total * -1);
+		return (total = (int) total * -1);
 	else
 		return (total);
 }

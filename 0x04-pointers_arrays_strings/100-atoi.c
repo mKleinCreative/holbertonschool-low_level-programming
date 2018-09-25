@@ -24,7 +24,7 @@ int _atoi(char *s)
 			total = total * 10 + s[i] - 48;
 	}
 	if (neg < 0)
-		return (total = (int) total * -1);
+		return (total = total * -1);
 	else
 		return (total);
 }

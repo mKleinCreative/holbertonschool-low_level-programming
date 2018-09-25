@@ -19,5 +19,7 @@ void puts2(char *str)
 	{
 		if (!(i % 2))
 			_putchar(str[i]);
+		else
+			continue;
 	}
 }

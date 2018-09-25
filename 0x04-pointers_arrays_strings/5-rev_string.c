@@ -1,14 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "holberton.h"
 
 /**
- * main - Entry point
- *
- * Return: (Success)
+ * rev_string - reverses a string
+ * @s: character array to reverse
  */
 
-int main(void)
+void rev_string(char *s)
 {
-	return (0);
-}
+	char *first, *last, c;
+	
+	first = s;
+	last = s;
 
+	while ( *last )
+		++last;
+	if ( first < last)
+	{
+		for ( ; first < --last; ++first )
+		{
+			c = *first;
+			*first = *last;
+			*last = c;
+		}
+	}
+}

@@ -12,6 +12,8 @@ int _atoi(char *s)
 
 	total = 0;
 	neg = 1;
+	if (s[0] == '\0')
+		return;
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (total > 0 && (s[i] > 57 || s[i] < 48))

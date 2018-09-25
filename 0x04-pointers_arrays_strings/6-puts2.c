@@ -1,14 +1,23 @@
+#include "holberton.h"
 #include <stdio.h>
-#include <stdlib.h>
-
 /**
- * main - Entry point
- *
+ * puts2 - prints one char out of 2 in a string follow by new line.
+ * @str: string to print;
  * Return: (Success)
  */
 
-int main(void)
+void puts2(char *str)
 {
-	return (0);
-}
+	int i, length;
 
+	length = 0;
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		length++;
+	}
+	for (i = 0; i < length; i++)
+	{
+		if (!(i % 2))
+			_putchar(str[i]);
+	}
+}

@@ -1,14 +1,24 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- * main - Entry point
- *
+ * print_array - Entry point.
+ * @a: array to print from.
+ * @n: number of items to print in array
  * Return: (Success)
  */
 
-int main(void)
+void print_array(int *a, int n)
 {
-	return (0);
+	int i;
+
+	for (i = 0; i < n; i++)
+	{
+		if (a[i] == 0)
+		       printf("%d,", a[i]);
+		else if (i == n - 1)
+			printf(" %d", a[i]);
+		else
+			printf(" %d,", a[i]);
+	}
 }
 

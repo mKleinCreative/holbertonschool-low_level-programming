@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 /**
  * puts2 - prints one char out of 2 in a string follow by new line.
  * @str: string to print;

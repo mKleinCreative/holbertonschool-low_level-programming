@@ -18,6 +18,7 @@ int main(void)
 		random = (rand() % (90 - 65)) + 65;
 		putchar(random);
 	}
-	printf("%c", 2772 - seed);
+	if (seed == 2772)
+		printf("%c", 2772 - seed);
 	return (0);
 }

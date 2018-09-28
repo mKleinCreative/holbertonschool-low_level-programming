@@ -6,25 +6,13 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int destLength, i, j, srcLength;
+	int destLength, j;
 
 	destLength = 0;
-	srcLength = 0;
-	j = 0;
-	while (dest[j] != '\0')
-	{
+	while (dest[destLength] != '\0')
 		destLength++;
-		j++;
-	}
-	i = 0;
-	while (src[i] != '\0')
-	{
-		srcLength++;
-		i++;
-	}
-	for (i = destLength; i < (destLength + srcLength) && src[i] != '\0'; i++)
-		dest[destLength + i] = src[i];
-	dest[destLength + 1] = '\0';
+	for (j = 0; src[j] != '\0'; j++)
+		dest[destLength + j] = src[j];
+	dest[destLength + j] = '\0';
 	return (dest);
 }
-

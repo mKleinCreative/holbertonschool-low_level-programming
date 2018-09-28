@@ -1,13 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 /**
- * main - Entry point
- *
+ * string_toupper - transforms a string to uppercase
+ * @*: char to uppercase
  * Return: (Success)
  */
-
-int main(void)
+char *string_toupper(char *)
 {
 	return (0);
 }

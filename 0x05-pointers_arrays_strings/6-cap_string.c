@@ -6,24 +6,13 @@
 
 int is_separator(char ch)
 {
-	int ans;
-
-	ans = 0;
 	if (ch == ' ' || ch == ',' || ch == ';' || ch == '.' || ch == '!' || ch == '?')
-	{
-		ans = 1;
-		return (ans);
-	} else if (ch == '\t' || ch == '\n')
-	{
-		ch = ' ';
-		ans = 1;
-		return (ans);
-	} else if (ch == '"' || ch == '(' || ch == ')' || ch == '{' || ch == '}')
-	{
-		ans = 1;
-		return (ans);
-	}
-	return (ans);
+		return (1);
+	else if (ch == '\t' || ch == '\n')
+		return (1);
+	else if (ch == '"' || ch == '(' || ch == ')' || ch == '{' || ch == '}')
+		return (1);
+	return (0);
 }
 
 
@@ -45,10 +34,8 @@ char *cap_string(char *str)
 				str[i] = str[i] - 32;
 			continue;
 		}
-		if (is_separator(str[i]))
+		if (is_separator(str[i - 1]))
 		{
-			++i;
-
 			if ((str[i] >= 'a' && str[i] <= 'z'))
 			{
 				str[i] = str[i] - 32;

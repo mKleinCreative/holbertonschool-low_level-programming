@@ -1,14 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 /**
- * main - Entry point
- *
+ * leet - translates a string to lee7 speak
+ * @ch: string to translate
  * Return: (Success)
  */
 
-int main(void)
+char *leet(char *ch)
 {
+	char swap[5][2];
+       
+	swap = {{a, A},{e, E},{o, O},{t, T},{l, L}};
+	while (*ch++)
+	{
+	
+	}
 	return (0);
 }
 

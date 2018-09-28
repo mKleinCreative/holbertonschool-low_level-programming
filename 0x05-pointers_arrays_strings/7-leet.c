@@ -6,12 +6,19 @@
 
 char *leet(char *ch)
 {
-	char swap[5][2];
-       
-	swap = {{a, A},{e, E},{o, O},{t, T},{l, L}};
-	while (*ch++)
+	char *lower = "aeotl";
+	char *upper = "AEOTL";
+	char *number = "43071";
+	int i, j;
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-	
+		for (j = 0; j < 5; j++)
+		{
+			if (ch[i] == lower[j] || ch[i] == upper[j])
+			s[i] = number[j];
+			break;
+		}
 	}
 	return (0);
 }

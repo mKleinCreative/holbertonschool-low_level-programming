@@ -7,6 +7,7 @@
 int is_separator(char ch)
 {
 	if (ch == ' ' || ch == ',' || ch == ';')
+
 		return (1);
 	else if (ch == '.' || ch == '!' || ch == '?')
 		return (1);

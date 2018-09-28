@@ -1,14 +1,30 @@
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * main - Entry point
- *
- * Return: (Success)
+ * _strncat - concates 2 strings with n as limiter
+ * @dest: string to concatenate to
+ * @src: string to concatenate from
+ * @n: how many bytes to take from src
+ * Return: mutated dest string
  */
 
-int main(void)
+char *_strncat(char *dest, char *src, int n)
 {
-	return (0);
-}
 
+	int dest_len, i, j;
+
+	dest_len = 0;
+	j = 0;
+	while (dest[j] != '\0')
+	{
+		dest_len++;
+		j++;
+	}
+	for (i = 0; i < n && src[i] != '\0'; i++)
+	{
+		dest[dest_len + i] = src[i];
+	}
+	dest[dest_len + i] = '\0';
+	
+	return (dest);
+}

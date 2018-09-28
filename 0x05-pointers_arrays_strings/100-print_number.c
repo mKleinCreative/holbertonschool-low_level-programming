@@ -11,16 +11,15 @@ void print_number(int n)
 	{
 		_putchar('-');
 		num = n  * -1;
-	} else {
+	} else
+	{
 		num = n;
 	}
 	if (num  < 10)
 	{
 		_putchar((num  % 10) + '0');
 		return;
-	} else
-	{
-		print_number(num  / 10);
 	}
+	print_number(num  / 10);
 	_putchar((num  % 10) + '0');
 }

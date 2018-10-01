@@ -8,7 +8,7 @@
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	int counter;
+	unsigned int counter;
 
 	counter = 0;
 	while (counter < n)

@@ -5,10 +5,9 @@
  * @n: size of memory area to fill
  * Return: pointer to s
  */
-
 char *_memset(char *s, char b, unsigned int n)
 {
-	int counter;
+	unsigned int counter;
 
 	counter = 0;
 	while (counter < n)
@@ -18,4 +17,3 @@ char *_memset(char *s, char b, unsigned int n)
 	}
 	return (s);
 }
-

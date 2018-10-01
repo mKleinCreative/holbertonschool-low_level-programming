@@ -1,10 +1,7 @@
 /**
- *  - 
- * @s: memory area pointed to.
- * @c: constant byte to fill memory with.
- @ @n: size of memory area to fill
- * Return: pointer to s
- */
+ * print_chessboard - prints a chessboard
+ * @a: given board to print out.
+ **/
 
 void *()
 {

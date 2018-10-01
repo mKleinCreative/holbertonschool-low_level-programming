@@ -1,8 +1,8 @@
 /**
- *  _memcpy - copies given memory area 
+ * _memcpy - copies given memory area
  * @dest: memory area to copy to
  * @src: memory area to copy from.
- @ @n: size of memory to copy from src
+ * @n: size of memory to copy from src
  * Return: pointer to dest
  */
 

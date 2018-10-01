@@ -2,7 +2,7 @@
  * _strpbrk - searches a string for any set of bytes
  * @s: string to search
  * @accept: string containing bytes to search for.
- * Return: returns pointer to byte in s 
+ * Return: returns pointer to byte in s
  *		or null if nothing.
  */
 
@@ -19,7 +19,7 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (accept[i] == s[j])
 			{
-				if (j <=pos)
+				if (j <= pos)
 				{
 					pos = j;
 					flag = 1;
@@ -28,9 +28,7 @@ char *_strpbrk(char *s, char *accept)
 		}
 	}
 	if (flag == 1)
-		return &s[pos];
+		return (&s[pos]);
 	else
-		return '\0';
-	
+		return ('\0');
 }
-

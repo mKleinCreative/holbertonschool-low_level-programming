@@ -1,13 +1,12 @@
 /**
- *  - 
- * @s: memory area pointed to.
- * @c: constant byte to fill memory with.
- @ @n: size of memory area to fill
- * Return: pointer to s
+ * set_string - sets the value of a pointer to a char.
+ * @s: pointer to change.
+ * @to: arguement to change to.
+ * Return: sets value from @s to @to
  */
 
-void *()
+void set_string(char **s, char *to)
 {
-	
+	*s = to;
 }
 

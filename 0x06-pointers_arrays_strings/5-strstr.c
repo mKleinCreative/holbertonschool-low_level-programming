@@ -23,11 +23,9 @@ char *_strstr(char *haystack, char *needle)
 			flag = 1;
 		}
 		if (flag)
-		{
 			return (haystack + sentence);
-		}
 	}
-	if (!needle)
+	if (needle[0] == '\0')
 		return (haystack);
 	return ('\0');
 }

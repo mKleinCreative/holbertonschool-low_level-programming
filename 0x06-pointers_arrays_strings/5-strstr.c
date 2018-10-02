@@ -10,6 +10,8 @@ char *_strstr(char *haystack, char *needle)
 {
 	int flag, sentence, word;
 
+	if (needle[0] == '\0')
+		return (haystack);
 	flag = 0;
 	for (sentence = 0; haystack[sentence] != '\0'; sentence++)
 	{
@@ -25,8 +27,6 @@ char *_strstr(char *haystack, char *needle)
 		if (flag)
 			return (haystack + sentence);
 	}
-	if (needle[0] == '\0')
-		return (haystack);
-	return ('\0');
+		return ('\0');
 }
 

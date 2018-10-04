@@ -12,9 +12,9 @@ int _strlen_recursion(char *s)
 }
 /**
  * pal_checker - helper function to check if palindrome
- * @str
+ * @str: string to check
  * @start: beginning of str array
- *
+ * @end: end of the str array
  * Return: (Success)
  */
 

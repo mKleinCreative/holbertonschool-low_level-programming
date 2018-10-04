@@ -1,4 +1,9 @@
-
+/**
+ * prime_check - checks to see if a number is prime
+ * @n: original number to check if prime.
+ * @i: iterator that goes through all numbers until it reaches 1
+ * Return: 1 if number is prime, 0 if not
+ */
 int prime_check(int n, int i)
 {
 	if (i == 1)

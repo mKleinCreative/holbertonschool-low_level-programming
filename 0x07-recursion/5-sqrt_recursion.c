@@ -1,14 +1,41 @@
-#include <stdio.h>
-#include <stdlib.h>
+/**
+ * square - returns the number squared.
+ * @x: number to square.
+ * Return: returns the number multiplied by itself.
+ */
+int square(int x)
+{
+	return (x * x);
+}
 
 /**
- * main - Entry point
- *
- * Return: (Success)
+ * squareRootNatTest - tests to see if the number is a natural square root.
+ * @n: number to find the sqrt of.
+ * @k: number to iterate through and check against n.
+ * Return: returns the natural sqrt or -1 if it doesnt have one.
  */
 
-int main(void)
+
+int squareRootNatTest(int n, int k)
 {
-	return (0);
+	if (square(k) >= n)
+	{
+		if (square(k) > n)
+			return (-1);
+		return (k);
+	}
+	else
+		return (squareRootNatTest(n, k + 1));
+}
+/**
+ * _sqrt_recursion - returns the natural square root of a number.
+ * @n: number to find the sqrt of.
+ * Return: returns the natural sqrt or -1 if it doesnt have one.
+ */
+
+
+int _sqrt_recursion(int n)
+{
+	return (squareRootNatTest(n, 0));
 }
 

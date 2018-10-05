@@ -1,4 +1,3 @@
-#include <stdio.h>
 /**
  * check_string - compares the contents of 2 strings vs wildcards
  * @s1: string to compare.

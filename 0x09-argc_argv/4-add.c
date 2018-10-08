@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <ctype.h>
 /**
  * main - parses and adds all command args that are ints
  * @argc: number of arguements
@@ -10,21 +10,24 @@
 
 int main(int argc, char *argv[])
 {
-	int sum, i;
+	int sum, i, j;
 
 	sum = 0;
 	if (argc == 1)
 		return (printf("%d\n", 0));
-	for (i = 0; i < argc; i++)
+	for (i = 1; i < argc; i++)
 	{
-		if (*(*(argv) + i) < 30 || *(*(argv) + i) > 39)
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			printf("Error\n");
-			return (0);
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (0);
+			}
 		}
 		sum += atoi(argv[i]);
 	}
-	printf("sum is %d\n", sum);
+	printf("%d\n", sum);
 	return (0);
 }
 

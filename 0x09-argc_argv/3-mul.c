@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	first = atoi(argv[1]);
 	second = atoi(argv[2]);
 	product = first * second;
-		printf("%d", product);
+		printf("%d\n", product);
 	return (0);
 }
 

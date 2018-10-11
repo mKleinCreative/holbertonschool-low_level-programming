@@ -2,13 +2,24 @@
 #include <stdlib.h>
 
 /**
- * - Entry point
- *
- * Return: (Success)
+ * _calloc - allocates memory for an array of size bites
+ * @nmemb: what to fill array with
+ * @size: type of byte to allocate for memory
+ * Return: returns pointer to allocated memory otherwise NULL on fail
  */
 
-int main(void)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	return (0);
+	int *arr;
+	unsigned int i;
+
+	if (!nmemb || !size)
+		return (NULL);
+	arr = malloc(size * nmemb);
+	if (arr == 0)
+		return (NULL);
+	for (i = 0; arr[i]; i++)
+		arr[i] = 0;
+	return (arr);
 }
 

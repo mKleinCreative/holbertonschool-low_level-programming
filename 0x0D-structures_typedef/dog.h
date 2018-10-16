@@ -1,12 +1,10 @@
-#ifndef dog
-#define dog
-int _putchar(char c);
+#ifndef _DOG_H_
+#define _DOG_H_
 /**
  * struct dog - is a doggo
  * @name: name of doggo
  * @age: age of doggo
  * @owner: owner of doggo.
- * Return: full fledged dog
  */
 struct dog
 {
@@ -14,4 +12,5 @@ struct dog
 	float age;
 	char *owner;
 };
+int _putchar(char c);
 #endif

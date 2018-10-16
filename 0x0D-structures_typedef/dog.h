@@ -1,6 +1,6 @@
 #ifndef dog
 #define dog
-
+int _putchar(char c);
 /**
  * struct dog - is a doggo
  * @name: name of doggo

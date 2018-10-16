@@ -2,11 +2,8 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
- * new_dog - initializes a dog struct
- * @name: name of the dog created.
- * @age: age of the dog created.
- * @owner: owner of created dog.
- * Return: NULL if function fails
+ * free_dog - frees up the space for a dog in memory
+ * @d: dog to free.
  */
 void free_dog(dog_t *d)
 {

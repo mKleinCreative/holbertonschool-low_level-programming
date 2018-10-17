@@ -6,6 +6,7 @@
  * @array: array to iterate over.
  * @size: size of array to iterate over
  * @cmp: function that compares values.
+ * Return: index of matched element.
  */
 
 int int_index(int *array, size_t size, int (*cmp)(int))
@@ -13,8 +14,8 @@ int int_index(int *array, size_t size, int (*cmp)(int))
 	int temp;
 
 	temp = size;
-	if (!array)
-		return (0);
+	if (!array || cmp == NULL)
+		return (-1);
 	if (size <= 0)
 		return (-1);
 	for (; size; size--)

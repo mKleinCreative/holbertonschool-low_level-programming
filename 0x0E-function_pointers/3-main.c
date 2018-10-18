@@ -5,6 +5,8 @@
 
 /**
  * main - executes a calculator function
+ * @argc: number of arguments, should be 4
+ * @argv: should follow "function number operator number"
  * Return: calculated function
  */
 

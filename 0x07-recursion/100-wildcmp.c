@@ -13,8 +13,7 @@ int check_string(char *s1, char *s2)
 		return (check_string(s1 + 1, s2 + 1));
 	if (*s2 == '*')
 		return (check_string(s1 + 1, s2) || check_string(s1, s2 + 1));
-
-	return (0);
+	return (1);
 }
 
 /**
@@ -29,5 +28,7 @@ int wildcmp(char *s1, char *s2)
 {
 	if (*s2 == 1 && *s2 == '*')
 		return (1);
-	return (check_string(s1, s2));
+	if (check_string(s1, s2))
+		return (1);
+	return (0);
 }

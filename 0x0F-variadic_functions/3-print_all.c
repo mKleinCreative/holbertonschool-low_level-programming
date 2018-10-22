@@ -14,40 +14,38 @@ typedef struct format
 /**
  * print_char - prints a char
  * @a: char to print
- * Return: character printed
  */
-char print_char(char a)
+void print_char(va_list a)
 {
-	printf("%c", a);
-	return (0);
+	printf("%c", va(arg(a, int));
 }
 /**
  * print_int - prints an int
  * @a: int to print
- * Return: int printed
  */
-int print_int(int a)
+void print_int(va_list a)
 {
-	printf("%d", a);
-	return (0);
+	printf("%d", va_arg(a, int));
 }
 /**
- *  print_float - prints a float
- * Return: float printed
+ * print_float - prints a float
+ * @a: float to print
  */
-float print_float(float a)
+void print_float(va_list a)
 {
-	printf("%f", a);
-	return (0);
+	printf("%f", va_arg(a, double));
 }
 /**
- *  print_char - prints a char
- * Return: character printed
+ * print_char - prints a char
+ * @a: char to print
  */
-char print_string(char *a)
+void print_string(va_list a)
 {
-	printf("%c", *a);
-	return (0);
+	char *current;
+	current = va_arg(val, char *);
+	if (!current)
+		printf("(nil)");
+	printf("%s", a);
 }
 /**
  * print_all - prints all args passed to function
@@ -62,19 +60,29 @@ void print_all(const char * const format, ...)
 		{"i", printf("%d", print_int)},
 		{"f", printf("%f", print_float)},
 		{"s", printf("%c", print_string)},
-		{NULL, printf("(nil)"}
+		{NULL, NULL}
 	};
-	unsigned int i;
+	int i, j;
 
+	j = 0;
 	if (format == NULL)
 		return;
 	va_start(list, format);
-	while(formats[i].flag != NULL)
+	while(format && format[j])
 	{
-		if (formats[i].flag[0] == formatt[0])
-			return ((formats[i].f)(va_arg(list, void *));
-		i++;
+		i = 0
+		while (formats[i].flag)
+		{
+			if (formats[i].flag[0] == format[0])
+			{
+				(formats[i].f)(va_arg(list, void *);
+				 if (format[j + 1])
+				 	printf(", ");
+			}
+			i++;
+		}
+		j++;
 	}
-	printf("%c\n", va_arg(list, char));
+	printf("\n");
 	va_end(list);
 }

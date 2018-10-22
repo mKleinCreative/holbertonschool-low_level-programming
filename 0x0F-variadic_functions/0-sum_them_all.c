@@ -1,6 +1,6 @@
 #include "variadic_functions.h"
 /**
- * sum_them_all: returns the sum of all parameters
+ * sum_them_all - returns the sum of all parameters
  * @n: a static variable that contains a number.
  * Return: the sum of all of n's args
  */
@@ -16,6 +16,6 @@ int sum_them_all(const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 		sum += va_arg(num_list, unsigned int);
 	va_end(num_list);
-	return sum;
+	return (sum);
 }
 

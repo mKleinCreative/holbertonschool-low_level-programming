@@ -14,8 +14,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		return;
 	va_start(num_list, n);
 
-	for (i = 0; i < n - 1; i++)
-		printf("%u%s", va_arg(num_list, unsigned int), separator);
-	printf("%u\n", va_arg(num_list, unsigned int));
+	for (i = 0; i < n; i++)
+	{
+		printf("%u%s", va_arg(num_list, int), separator);
+		if (separator == NULL || *separator == '\0')
+			continue;
+	}
+	printf("%u\n", va_arg(num_list, int));
 	va_end(num_list);
 }

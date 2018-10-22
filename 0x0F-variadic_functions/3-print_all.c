@@ -28,8 +28,8 @@ void print_float(va_list a)
 }
 
 /**
- * print_char - prints a char
- * @a: char to print
+ * print_string - prints a char
+ * @a: string to print
  */
 void print_string(va_list a)
 {
@@ -65,7 +65,7 @@ void print_all(const char * const format, ...)
 	i = j = 0;
 	copy = format;
 	va_start(list, format);
-	while(copy && copy[j] != '\0')
+	while (copy && copy[j] != '\0')
 	{
 		i = 0;
 		while (formats[i].flag)
@@ -73,8 +73,8 @@ void print_all(const char * const format, ...)
 			if (formats[i].flag[0] == copy[j])
 			{
 				(formats[i].f)(list);
-				 if (copy[j + 1])
-				 	printf(", ");
+				if (copy[j + 1])
+					printf(", ");
 			}
 			i++;
 		}

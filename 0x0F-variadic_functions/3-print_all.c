@@ -61,7 +61,9 @@ void print_all(const char * const format, ...)
 		{NULL, NULL}
 	};
 	int i, j;
+	char *sep;
 
+	sep = "";
 	i = j = 0;
 	copy = format;
 	va_start(list, format);
@@ -72,9 +74,9 @@ void print_all(const char * const format, ...)
 		{
 			if (formats[i].flag[0] == copy[j])
 			{
+				printf("%s", sep);
 				(formats[i].f)(list);
-				if (copy[j + 1])
-					printf(", ");
+				sep = ", ";
 			}
 			i++;
 		}

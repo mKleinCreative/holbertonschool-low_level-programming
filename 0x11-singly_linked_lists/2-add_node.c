@@ -1,20 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
+#include <string.h>
+
+/**
+ * _strlen - returns the length of a string.
+ * @s: string to find the length of.
+ * Return: (Success)
+ */
+
+int _strlen(const char *s)
+{
+	int len;
+
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	return (len);
+}
+
 /**
  * add_node - adds a node to the linked list
- * @h: pointer to head of linked list to find the size of
+ * @head: pointer to head of linked list to find the size of
+ * @str: string to insert into the node of the linked listd
  * Return: number of nodes in the list
  */
-size_t *add_node(const list_t **head, const char *str)
+list_t *add_node(list_t **head, const char *str)
 {
-	int count = 0;
+	list_t *tmp;
 
-	while (h != NULL)
+	if ((head == NULL) || (str == NULL))
+		return (NULL);
+	tmp = (malloc(sizeof(list_t)));
+	if (!tmp)
 	{
-		count++;
-		h = h->next;
+		free(tmp);
+		return (NULL);
 	}
 
-	return (count);
+	tmp = (malloc(sizeof(list_t)));
+	tmp->next = *head;
+	tmp->str = strdup(str);
+	tmp->len = _strlen(str);
+	*head = tmp;
+	return (*head);
 }

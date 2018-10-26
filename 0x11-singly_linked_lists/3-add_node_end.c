@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * _strlen - returns the length of a string.
+ * _strlen - returns the length of a string
  * @s: string to find the length of.
  * Return: (Success)
  */
@@ -33,6 +33,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	tmp = (malloc(sizeof(list_t)));
 	if (!tmp)
 		return (NULL);
+
 	if (*head == NULL)
 	{
 		tmp->str = strdup(str);
@@ -48,8 +49,10 @@ list_t *add_node_end(list_t **head, const char *str)
 			tmp->next = NULL;
 			tmp->str = strdup(str);
 			tmp->len = _strlen(str);
+			return (*head);
 		}
 		last = last->next;
 	} while (last);
+	free(tmp);
 	return (*head);
 }

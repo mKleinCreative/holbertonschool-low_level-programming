@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * free_listint - frees up a linked list
+ * free_listint2 - frees up a linked list and sets head to NULL
  * @head: head to set to null
  */
 

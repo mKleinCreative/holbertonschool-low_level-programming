@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "lists.h"
+
+/**
+ * free_listint - frees up a linked list
+ * @head: head to set to null
+ */
+
+void free_listint2(listint_t **head)
+{
+	listint_t *temp;
+
+	if ((*head)->next != NULL)
+		temp = (*head)->next;
+	else
+	{
+		free(*head);
+		return;
+	}
+	if (*head)
+	{
+		free_listint2(&temp);
+		free(*head);
+	}
+	*head = NULL;
+}

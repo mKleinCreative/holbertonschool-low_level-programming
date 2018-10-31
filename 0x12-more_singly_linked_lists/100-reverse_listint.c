@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * delete_nodeint_at_index - inserts a data node at given index into LL
+ * reverse_listint - reverses a LL
  * @head: pointer to the head of the list
  * Return: Reversed list.
  */

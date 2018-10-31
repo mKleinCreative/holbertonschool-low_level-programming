@@ -2,6 +2,18 @@
 #include <stdlib.h>
 #include "lists.h"
 
+static listint_t *new_node(int n)
+{
+	listint_t node;
+
+	node = malloc(sizeof(listint_t));
+	if (!node)
+		return (NULL);
+	node->n = n;
+	node->next = NULL;
+	return (node);
+}
+
 /**
  * insert_nodeint_at_index - inserts a data node at given index into LL
  * @head: pointer to the head of the list
@@ -12,29 +24,27 @@
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *temp, *new_node;
+	listint_t *temp, *new;
 	unsigned int i;
 
 	temp = *head;
-	if (!temp)
-		return (0);
+	if (!head)
+		return (NULL);
+	if (!(*head) && idx == 0)
+	{
+		*head = new_node(n);
+		return (*head);
+	}
 	for (i = 0; temp != '\0'; i++)
 	{
 		if (i + 1 == idx)
-			break;
+		{
+			new = new_node(n);
+			new->next = temp->next;
+			temp->next = new;
+			return (new);
+		}
 		temp = temp->next;
 	}
-	new_node = malloc(sizeof(listint_t));
-	if (!new_node)
-	{
-		free(new_node);
-		return (NULL);
-	}
-	if (i + 1 == idx)
-	{
-		new_node->n = n;
-		new_node->next = temp->next;
-		temp->next = new_node;
-	}
-	return (new_node);
+	return (NULL);
 }

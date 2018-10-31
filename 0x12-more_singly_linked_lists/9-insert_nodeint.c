@@ -2,9 +2,15 @@
 #include <stdlib.h>
 #include "lists.h"
 
+/**
+ * new_node - creates a LL data node.
+ * @n: data to insert into new node.
+ * Return: address of new node or NULL if failed.
+ */
+
 static listint_t *new_node(int n)
 {
-	listint_t node;
+	listint_t *node;
 
 	node = malloc(sizeof(listint_t));
 	if (!node)

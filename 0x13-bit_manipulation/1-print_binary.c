@@ -12,7 +12,7 @@ void print_binary(unsigned long int n)
 {
 	unsigned int i = 0;
 	int flag = 0;
-	unsigned int highestOne = 1 << (sizeof(unsigned int)*8 - 1);
+	unsigned int highestOne = 1 << ((sizeof(unsigned int) * 8) - 1);
 
 	if (n == 0)
 	{

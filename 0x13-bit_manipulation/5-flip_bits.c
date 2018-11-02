@@ -2,13 +2,15 @@
 #include <stdlib.h>
 
 /**
- * flip_bits.c - Entry point
+ * flip_bits - 
  *
  * Return: (Success)
  */
 
 int main(void)
 {
-	return (0);
+	different = m ^ n;
+	while (difference)
+		difference &= (difference - 1);
 }
 

@@ -10,13 +10,14 @@
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	if (n && index)
-	{
-		*n = *n | 1UL << index;
-		return (1);
-	}
-	else
+	int bit;
+
+	if (index >> 31)
 		return (-1);
-	return (-1);
+	bit = 1 << index;
+
+	*n = *n | bit;
+
+	return (1);
 }
 

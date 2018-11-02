@@ -19,7 +19,7 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
-	for (i = 0; i < sizeof(unsigned int) * 8; i++)
+	for (i = 0; i < sizeof(unsigned long int) * 8; i++)
 	{
 		if ((n & (highestOne >> i)) != 0)
 			flag = 1;

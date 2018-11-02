@@ -2,13 +2,19 @@
 #include <stdlib.h>
 
 /**
- * get_bit.c - Entry point
- *
- * Return: (Success)
+ * get_bit.c - returns the value of a bit at a given index
+ * @n: int to get bit from
+ * @index: index to pull data from
+ * Return: the value of a bit at index or -1 if error
  */
 
-int main(void)
+int get_bit(unsigned long int n, unsigned int index)
 {
-	return (0);
+	if (index > 63)
+		return (-1);
+	if (n != 0)
+		return ((n & ( 1 << index )) >> index);
+	else
+		return (-1);
 }
 

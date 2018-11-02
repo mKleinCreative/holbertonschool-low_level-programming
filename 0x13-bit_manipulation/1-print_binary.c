@@ -10,21 +10,24 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned int i = 0;
-	int flag = 0;
-	unsigned int highestOne = 1 << ((sizeof(unsigned int) * 8) - 1);
+	unsigned long int i, first = 0;
+	unsigned long int shift, result;
 
 	if (n == 0)
 	{
 		_putchar('0');
 		return;
 	}
-	for (i = 0; i < sizeof(unsigned long int) * 8; i++)
+	for (i = (sizeof(unsigned long int) * 8); i > 0; i--)
 	{
-		if ((n & (highestOne >> i)) != 0)
-			flag = 1;
-		if (flag)
-			_putchar(((n & (highestOne >> i)) != 0) + '0');
+		shift = n >> (i - 1);
+		result = shift & 1;
+		if (result)
+			first = 1;
+		if (result == 1 && first == 1)
+			_putchar('1');
+		else if (first == 1)
+			_putchar('0');
 	}
 }
 

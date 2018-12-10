@@ -1,14 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "lists.h"
 
 /**
- * free_dlistint.c - Entry point
- *
- * Return: (Success)
+ * free_dlistint - frees up a DLL
+ * @head: head of list to free
  */
 
-int main(void)
+void free_dlistint(dlistint_t *head)
 {
-	return (0);
+	if (head)
+	{
+		free_dlistint(head->next);
+		free(head);
+	}
 }
 

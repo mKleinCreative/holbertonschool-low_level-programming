@@ -13,10 +13,8 @@ int main(void)
     dlistint_t *head;
 
     head = NULL;
-    add_dnodeint_end(&head, 0);
-    add_dnodeint_end(&head, 3);
     printf("-----------------\n");
-    insert_dnodeint_at_index(&head, 0, 4096);
+    insert_dnodeint_at_index(&head, 0, -33);
     print_dlistint(head);
     free_dlistint(head);
     head = NULL;

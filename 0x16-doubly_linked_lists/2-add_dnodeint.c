@@ -1,14 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "lists.h"
 
 /**
- * add_dnodeint.c - Entry point
- *
- * Return: (Success)
+ * add_dnodeint - inserts a node to the head of a DLL
+ * @head: head of list to add node too
+ * @n: value of node to be added
+ * Return: address of new element or NULL if failed.
  */
 
-int main(void)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	return (0);
+	dlistint_t *new;
+
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
+	new->next = *head;
+	new->n = n;
+	*head = new;
+	return (new);
 }
 

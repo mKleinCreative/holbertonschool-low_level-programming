@@ -1,14 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "lists.h"
 
 /**
- * dlistint_len.c - Entry point
- *
- * Return: (Success)
+ * dlistint_len -returns number of elements in DLL
+ * @h: pointer to head of DLL to count
+ * Return: number of elements in the list
  */
 
-int main(void)
+size_t dlistint_len(const dlistint_t *h)
 {
-	return (0);
+	size_t count;
+
+	if (!h)
+		return (0);
+	count = 0;
+	while (h->next)
+	{
+		count++;
+		h = h->next;
+	}
+	return (++count);
 }
 

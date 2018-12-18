@@ -4,6 +4,7 @@
 
 /**
  * read_err - error for reading file
+ * @source: file error where error is being caused.
  */
 void read_err(char *source)
 {
@@ -68,7 +69,7 @@ static void cp(char *content, int dest, char *buffer, int length)
 }
 
 /**
- * main - Entry point
+ * main - copies one file to another
  * @ac: count of arguments, should always be 3
  * @av: av[1] is copy_from av[2] is copy_to.
  * Return: 0 for success!

@@ -1,14 +1,21 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "hash_tables.h"
 
 /**
- * djb2.c - Entry point
- *
- * Return: (Success)
+ * hash_djb2 - hashing algorithm created by dan bernstein
+ * @str: string to hash together into an int
+ * Return: Returns a hashed representation of the given string
  */
 
-int main(void)
+unsigned long int hash_djb2(const unsigned char *str)
 {
-	return (0);
+	unsigned long int hash;
+	int c;
+
+	hash = 5381;
+	while ((c = *str++))
+	{
+		hash = ((hash << 5) + hash) + c;
+	}
+	return (hash);
 }
 

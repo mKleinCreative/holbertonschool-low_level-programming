@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "hash_tables.h"
 
@@ -20,7 +19,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 	(new)->size = size;
 	(*new).array = malloc(size * sizeof(hash_node_t));
 	if (!(*new).array)
+	{
+		free(new);
 		return (NULL);
+	}
 	return (new);
 }
 

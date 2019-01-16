@@ -20,16 +20,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (!strlen(key))
 		return (0);
-
 	val_dup = strdup(value);
-	key_dup = strdup(value);
+	key_dup = strdup(key);
 	if (!val_dup || !key_dup)
 	{
 		free(val_dup);
 		free(key_dup);
 		return (0);
 	}
-
 	empty_node = malloc(sizeof(hash_node_t));
 	if (!empty_node)
 	{
@@ -54,15 +52,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				free(empty_node);
 				return (1);
 			}
-			collision_node->next
+			collision_node->next;
 		}
 		collision_node = ht->array[key_pos];
 		empty_node->next = collision_node;
 		(ht->array)[key_pos] = empty_node;
 	} else
-	{
 		(ht->array)[key_pos] = empty_node;
-	}
 	return (1);
 }
 

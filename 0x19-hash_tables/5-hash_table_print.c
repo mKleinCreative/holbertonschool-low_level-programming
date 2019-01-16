@@ -11,30 +11,27 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *pointer = NULL;
 	int flag = 0;
 
-	printf("{");
-	if (ht != NULL)
-	{
-		while (index < ht->size)
-		{
-			pointer = ht->array[index];
-			while(pointer)
-			{
-				printf("'%s': '%s'", pointer->key, pointer->value);
-				if (pointer->next)
-					printf(", ");
-				pointer = pointer->next;
-			}
-			while(!(ht->array[index + 1]))
-				index++;
-
-			if (flag && index < ht->size)
-				printf(", ");
-			else
-				flag = 1;
-			index++;
-		}
-	} else
+	if (ht == NULL)
 		return;
+	printf("{");
+	while (index < ht->size)
+	{
+		pointer = ht->array[index];
+		while (pointer)
+		{
+			printf("'%s': '%s'", pointer->key, pointer->value);
+			if (pointer->next)
+				printf(", ");
+			pointer = pointer->next;
+		}
+		while (!(ht->array[index + 1]))
+			index++;
+		if (flag && index < ht->size)
+			printf(", ");
+		else
+			flag = 1;
+		index++;
+	}
 	printf("}\n");
 }
 

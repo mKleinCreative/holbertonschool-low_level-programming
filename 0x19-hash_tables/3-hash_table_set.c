@@ -52,7 +52,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				free(empty_node);
 				return (1);
 			}
-			collision_node->next;
+			collision_node = collision_node->next;
 		}
 		collision_node = ht->array[key_pos];
 		empty_node->next = collision_node;

@@ -3,6 +3,29 @@
 #include "hash_tables.h"
 
 /**
+ * create_node - creates a new node for the hash table and frees if fails
+ * @pointer: where to store the new node
+ * @free_me1: first variable to free if node creation doesn't work
+ * @free_me2: second variable to free if node creation doesn't work
+ * Return: pointer to new node
+ */
+
+hash_node_t *create_node(hash_node_t *pointer, char *free_me1, char *free_me2)
+{
+	pointer = malloc(sizeof(hash_node_t));
+	if (!pointer)
+	{
+		free(free_me1);
+		free(free_me2);
+		return (0);
+	}
+	pointer->key = free_me1;
+	pointer->value = free_me2;
+	pointer->next = NULL;
+	return (pointer);
+}
+
+/**
  * hash_table_set - creates a key value pair in a hash table
  * @ht: hash table to store information
  * @key: key to place information with
@@ -28,16 +51,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(key_dup);
 		return (0);
 	}
-	empty_node = malloc(sizeof(hash_node_t));
-	if (!empty_node)
-	{
-		free(val_dup);
-		free(key_dup);
-		return (0);
-	}
-	empty_node->value = val_dup;
-	empty_node->key = key_dup;
-	empty_node->next = NULL;
+	empty_node = create_node(empty_node, key_dup, val_dup);
 	key_pos = key_index((unsigned char *)key, ht->size);
 	if ((ht->array)[key_pos] != NULL)
 	{

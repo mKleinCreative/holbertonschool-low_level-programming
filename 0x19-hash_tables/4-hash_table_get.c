@@ -10,16 +10,16 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int i;
-	hash_node_t *bucket_head;
+	hash_node_t *bucket;
 
 	if (ht == NULL || ht->size == 0)
 		return (NULL);
 	i = key_index((unsigned char *)key, ht->size);
-	bucket_head = ht->array[i];
-	for (bucket_head = ht->array[i]; bucket_head != NULL; bucket_head = bucket_head->next)
+	bucket = ht->array[i];
+	for (bucket = ht->array[i]; bucket != NULL; bucket = bucket->next)
 	{
-		if (strcmp(bucket_head->key, key) == 0)
-			return (bucket_head->value);
+		if (strcmp(bucket->key, key) == 0)
+			return (bucket->value);
 	}
 	return (NULL);
 }

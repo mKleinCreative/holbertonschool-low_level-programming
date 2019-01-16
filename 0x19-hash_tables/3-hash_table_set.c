@@ -43,7 +43,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	key_pos = key_index((unsigned char *)key, ht->size);
 	if ((ht->array)[key_pos] != NULL)
 	{
-		for (collision_node = (ht->array)[key_pos]; collision_node; collision_node->next)
+		collision_node = (ht->array)[key_pos];
+		while (collision_node)
 		{
 			if (strcmp(collision_node->key, key_dup) == 0)
 			{
@@ -53,6 +54,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				free(empty_node);
 				return (1);
 			}
+			collision_node->next
 		}
 		collision_node = ht->array[key_pos];
 		empty_node->next = collision_node;

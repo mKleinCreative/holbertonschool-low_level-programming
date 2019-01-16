@@ -1,14 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "hash_tables.h"
 
 /**
- * hash_table_get.c - Entry point
- *
- * Return: (Success)
+ * hash_table_get - gets the value for the given key
+ * @ht: hash table to search
+ * @key: key to lookup
+ * Return: value stored at the key
  */
 
-int main(void)
+char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	return (0);
+	unsigned long int i;
+	hash_node_t *bucket_head;
+
+	if (ht->size == 0 || ht == NULL)
+		return (NULL);
+	i = key_index((unsigned char *)key, ht->size);
+	bucket_head = ht->array[i];
+	for (bucket_head = ht->array[i]; bucket_head; bucket_head = bucket_head->next)
+	{
+		if (strcmp(bucket_head->key, key) == 0)
+			return (bucket_head->value);
+	}
+	return (NULL);
 }
 
